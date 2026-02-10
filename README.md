@@ -1,20 +1,17 @@
-<div align="center">
-<img width="1200" height="475" alt="GHBanner" src="https://github.com/user-attachments/assets/0aa67016-6eaf-458a-adb2-6e31a0763ed6" />
-</div>
+## Background and Product Intent
 
-# Run and deploy your AI Studio app
+The existing mood/diary services have these issues:
 
-This contains everything you need to run your app locally.
+- (1) Writing feels tedious → let users select just three numbers, with a cute UI
+- (2) Rewards feel slow → provide instant character changes as feedback on input
+- (3) Writing ends in isolation → weak return motivation, so allow friends to comment and share a My Home page
+- (4) High entry barrier (app install, sign-up) → Google login only, web-based
 
-View your app in AI Studio: https://ai.studio/apps/drive/1_6cod74TsDNlwQauu_qIo7_pM5PDO03B
+### Server Dashboard Including Load - Design
 
-## Run Locally
+Additional backend/cloud/operations data:
 
-**Prerequisites:**  Node.js
-
-
-1. Install dependencies:
-   `npm install`
-2. Set the `GEMINI_API_KEY` in [.env.local](.env.local) to your Gemini API key
-3. Run the app:
-   `npm run dev`
+- Request processing metrics (avg / p95 / p99 response time)
+- Error metrics (error rate (%) vs total requests / error type distribution (4xx / 5xx))
+- Current sustainable load (concurrent requests supported / bottleneck explanation)
+⇒ Server dashboard: built directly in Google Spreadsheet
