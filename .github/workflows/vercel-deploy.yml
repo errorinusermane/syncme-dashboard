@@ -28,7 +28,7 @@ jobs:
         with:
           vercel-token: ${{ secrets.VERCEL_TOKEN }}
           vercel-org-id: ${{ steps.vercel-ids.outputs.orgId || secrets.VERCEL_ORG_ID }}
-          vercel-project-id: ${{ steps.vercel-ids.outputs.projectId || secrets.VERCEL_PROJECT_ID }}
+          vercel-project-id: ${{ steps.vercel-ids.outputs.projectId || secrets.VERCEL_PROJECT_ID || secrets.PROJECT_ID }}
 
       - name: Deploy to Vercel (Production)
         if: github.event_name == 'push' && github.ref == 'refs/heads/main'
@@ -36,5 +36,5 @@ jobs:
         with:
           vercel-token: ${{ secrets.VERCEL_TOKEN }}
           vercel-org-id: ${{ steps.vercel-ids.outputs.orgId || secrets.VERCEL_ORG_ID }}
-          vercel-project-id: ${{ steps.vercel-ids.outputs.projectId || secrets.VERCEL_PROJECT_ID }}
+          vercel-project-id: ${{ steps.vercel-ids.outputs.projectId || secrets.VERCEL_PROJECT_ID || secrets.PROJECT_ID }}
           vercel-args: '--prod'
