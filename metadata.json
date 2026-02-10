@@ -1,0 +1,5 @@
+{
+  "name": "Backend Monitoring Dashboard",
+  "description": "A high-performance server monitoring dashboard for the Emotion/Diary service, visualizing latency, error rates, and system capacity.",
+  "requestFramePermissions": []
+}
